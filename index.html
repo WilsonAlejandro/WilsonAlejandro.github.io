@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Vibes</title>
+    
+    <style>
+        /* Tus estilos existentes */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Fondo claro */
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 1rem;
+        }
+        .banner {
+            padding: 0.1rem;
+            text-align: center;
+            font-size: 1.5rem; /* Tamaño de fuente más grande */
+            font-weight: bold; /* Texto en negrita */
+            letter-spacing: 2px; /* Mayor separación entre letras */
+            color: rgb(0, 0, 0);
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: var(--banner-color); /* Color dinámico */
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .header-content img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: colorAnimation 10s infinite; /* Animación constante */
+        }
+        main {
+            padding: 2rem;
+        }
+    .categorias {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        gap: 1rem;
+        flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias filas */
+    }
+    .categoria {
+        position: relative;
+        background-color: #ffffff; /* Fondo blanco */
+        border-radius: 10px;
+        text-align: center;
+        width: 30%; /* Ancho inicial */
+        height: 360px; /* Altura fija */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Ocultar contenido que sobresalga */
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .categoria:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    .categoria img {
+        width: 100%; /* Ajustar al ancho del cuadro */
+        height: 100%; /* Ajustar a la altura del cuadro */
+        object-fit: cover; /* Ajustar imagen sin deformarla */
+        background-color: #f7f7f7; /* Fondo claro para rellenar espacios vacíos */
+    }
+    .categoria a {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    .imagenes {
+        margin-top: 3rem;
+        text-align: center;
+    }
+    .imagenes img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+        .social-bubble {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+        }
+        .social-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        .social-bubble img {
+            width: 30px;
+            height: 30px;
+        }
+        .whatsapp-bubble {
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366; /* Verde de WhatsApp */
+        }
+        .instagram-bubble {
+            bottom: 90px;
+            right: 20px;
+            background-color: #E4405F; /* Rosa de Instagram */
+        }
+        .facebook-bubble {
+            bottom: 160px;
+            right: 20px;
+            background-color: #1877F2; /* Azul de Facebook */
+        }
+        footer {
+            background-color: #333;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+    </style>
+
+    <script>
+        // Lista de colores pastel
+        const pastelColors = [
+            "#FFB3BA", // Rosa pastel
+            "#FFDFBA", // Naranja pastel
+            "#FFFFBA", // Amarillo pastel
+            "#BAFFC9", // Verde pastel
+            "#BAE1FF", // Azul pastel
+            "#D5BAFF", // Morado pastel
+            "#FFC4E1", // Rosa claro
+            "#C4FFF9", // Turquesa pastel
+            "#FFFAC4", // Crema pastel
+            "#C4DFFF"  // Azul claro pastel
+        ];
+
+        // Seleccionar un color aleatorio
+        const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+
+        // Aplicar el color al banner
+        document.documentElement.style.setProperty("--banner-color", randomColor);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <p>50% de descuento en tu primera compra</p>
+        </div>
+        <div class="header-content">
+            <img src="Imagenes street vibes/Logo Street Vibes.jpg" alt="Logo">
+            <h1>Street Vibes</h1>
+        </div>
+    </header>
+    <main>
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Aquí puedes encontrar lo que buscas</p>
+        </section>
+        <section class="categorias">
+            <div class="categoria">
+                <a href="calzado.html">
+                    <img src="Imagenes street vibes/CalzadoInicio.jpg" alt="Imagen de calzado">
+                    <span>Calzado</span>
+                </a>
+            </div>
+            <div class="categoria">
+                <a href="camisetas.html">
+                    <img src="Imagenes street vibes/CamisetaInicio.jpg" alt="Imagen de camisetas">
+                    <span>Camisetas</span>
+                </a>
+            </div>
+            <div class="categoria">
+                <a href="Jeans.html">
+                    <img src="Imagenes street vibes/JeanInicio.jpg" alt="Imagen de jeans">
+                    <span>Jeans</span>
+                </a>
+            </div>
+        </section>
+        <a class="social-bubble whatsapp-bubble" href="https://wa.me/3204699706" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Logo de WhatsApp">
+        </a>
+        <a class="social-bubble instagram-bubble" href="Instagram_de_la_pagina" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Logo de Instagram">
+        </a>
+        <a class="social-bubble facebook-bubble" href="Facebook_de_la_pagina" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Logo de Facebook">
+        </a>
+    </main>
+    <footer>
+        <p>&copy; 2025 Street Vibes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
